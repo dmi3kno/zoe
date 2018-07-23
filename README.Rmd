@@ -1,0 +1,46 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# zoe
+
+The goal of `zoe` is to provide data about new and used car registratons and in particular about the rise of zero-emission vehicles in Norway. Norway went from diesel-dominated car fleet to primarily hybrid and zero-emission cars in the course of last decade. Understanding of market dynamics, influence of competition, government policy and consumer preferences could be facilitated through data analysis of the datasets included in this package. 
+
+## Installation
+
+You can install the  development version of `zoe` from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("dmi3kno/zoe")
+```
+## Example
+
+In this version of the package two datasets are included. `bilsalget` ("car sales" in Norwegian) contains information about monthly new vehicle registrations. 
+
+```{r}
+library(zoe)
+bilsalget_raw
+```
+
+Raw version of the dataset is provided in the "long" format. The dataset contains 3 time series (models, makes and monthly totals) from different sources (tables and images published on www.ofvas.no)
+
+
+Zero-emission vehicles are described in `zoe` dataset. This data contains monthly totals of new car registrations, used car import, share of diesel vehicles, average co2 emission of new vehicles, number of hybrids and zero-emission vehicles registred in the country.
+
+```{r}
+library(zoe)
+zoe_raw
+```
+
+Raw version of the dataset is provided in the "wide" format. The dataset contains several time series recorded primarily from analysis commentaries on www.ofvas.no website. Original text of commentaries is also provided (in Norwegian).

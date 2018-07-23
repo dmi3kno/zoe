@@ -1,0 +1,20 @@
+Package: zoe
+Version: 0.0.0.9000
+Title: New vehicle registrations in Norway (1999-2018)
+Description: Dataset and analysis tools for car registrations dataset from www.ofvas.no.
+Authors@R: person("Dmytro", "Perepolkin", , "dperepolkin@gmail.com", c("aut", "cre"))
+ByteCompile: true
+Depends:
+    R (>= 3.2.3)
+License: MIT + file LICENSE
+LazyData: true
+Suggests: 
+    dplyr,
+    knitr
+Imports: 
+    tibble
+RoxygenNote: 6.0.1
+VignetteBuilder: knitr
+URL: https://github.com/dmi3kno/zoe,
+BugReports: https://github.com/dmi3kno/zoe/issues
+Encoding: UTF-8
