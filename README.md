@@ -21,7 +21,7 @@ You can install the development version of `zoe` from
 devtools::install_github("dmi3kno/zoe")
 ```
 
-## Example
+## Datasets
 
 In this version of the package two datasets are included. `bilsalget`
 (“car sales” in Norwegian) contains information about monthly new
@@ -80,3 +80,32 @@ Raw version of the dataset is provided in the “wide” format. The dataset
 contains several time series recorded primarily from analysis
 commentaries on www.ofvas.no website. Original text of commentaries is
 also provided (in Norwegian).
+
+## Example
+
+We can produce insightful visualizations even from the raw dataset
+
+``` r
+library(zoe)
+library(tidyverse)
+library(lubridate)
+library(hrbrthemes)
+
+zoe_raw %>% filter(year>=2010) %>% 
+  mutate(date=ymd(paste(year, month, "01", sep="-")),
+         diesel=diesel_share/100*(total+import_used),
+         zoe=total_zoe+import_used_zoe,
+         hybrid=total_hybrid,
+         gasoline=total+import_used-diesel-zoe-hybrid) %>% 
+  select(date, gasoline, diesel, zoe, hybrid) %>% 
+  gather(key, value, -date) %>% 
+  ggplot()+
+  geom_line(aes(x=date, y=value, color=key, group=key), size=1.1)+
+  theme_ipsum_rc()+
+  scale_colour_ipsum()+
+  labs(title="Car registrations in Norway by fuel",
+       subtitle="Over the last decade Norway went from black to green",
+       y="Vehicle registrations", x=NULL, color="Fuel type")
+```
+
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="60%" />
