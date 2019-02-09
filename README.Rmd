@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
   out.width = "100%"
 )
 ```
-# polite <img src="man/figures/logo.png" align="right" />
+# zoe <img src="man/figures/logo.png" align="right" />
 
 The goal of `zoe` is to provide data about new and used car registratons and in particular about the rise of zero-emission vehicles in Norway. Norway went from diesel-dominated car fleet to primarily hybrid and zero-emission cars in the course of last decade. Understanding of market dynamics, influence of competition, government policy and consumer preferences could be facilitated through data analysis of the datasets included in this package. 
 

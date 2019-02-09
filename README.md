@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# polite <img src="man/figures/logo.png" align="right" />
+# zoe <img src="man/figures/logo.png" align="right" />
 
 The goal of `zoe` is to provide data about new and used car registratons
 and in particular about the rise of zero-emission vehicles in Norway.
