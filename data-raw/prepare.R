@@ -23,7 +23,7 @@ img_make <- read_csv("data-raw/input/co2_image_make_20190209.csv")
 # manually updated
 zoe_data <- read_excel("data-raw/input/Book2.xlsx", sheet = "summary")
 # this comes from get_comments.R
-comment_data <- read_csv("data-raw/input/ofvas_comments.csv")
+comment_data <- read_csv("data-raw/input/ofvas_comments_20190209.csv")
 
 nor_months <- c("januar", "februar", "mars", "april", "mai", "juni", "juli", "august",
                 "september", "oktober", "november", "desember")
