@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# zoe
+# polite <img src="man/figures/logo.png" align="right" />
 
 The goal of `zoe` is to provide data about new and used car registratons
 and in particular about the rise of zero-emission vehicles in Norway.
@@ -30,9 +30,9 @@ vehicle registrations.
 ``` r
 library(zoe)
 bilsalget_raw
-#> # A tibble: 69,634 x 8
+#> # A tibble: 70,414 x 8
 #>    car_name           year month series       source metric period value
-#>    <chr>             <dbl> <int> <chr>        <chr>  <chr>  <chr>  <dbl>
+#>    <chr>             <dbl> <dbl> <chr>        <chr>  <chr>  <chr>  <dbl>
 #>  1 TOTAL              2017     1 total models top    CM     CY     13055
 #>  2 Volkswagen Golf    2017     1 models       top    CM     CY       738
 #>  3 BMW i3             2017     1 models       top    CM     CY       622
@@ -43,7 +43,7 @@ bilsalget_raw
 #>  8 Nissan Leaf        2017     1 models       top    CM     CY       352
 #>  9 Toyota Yaris       2017     1 models       top    CM     CY       343
 #> 10 Mercedes-Benz GLC  2017     1 models       top    CM     CY       285
-#> # ... with 69,624 more rows
+#> # ... with 70,404 more rows
 ```
 
 Raw version of the dataset is provided in the “long” format. The dataset
@@ -58,7 +58,7 @@ hybrids and zero-emission vehicles registred in the country.
 ``` r
 library(zoe)
 zoe_raw
-#> # A tibble: 162 x 14
+#> # A tibble: 168 x 14
 #>     year month total import_used turnover_used avg_co2 bensin_co2
 #>    <int> <int> <dbl>       <dbl>         <dbl>   <dbl>      <dbl>
 #>  1  2005     1  7375        1768            NA      NA         NA
@@ -71,7 +71,7 @@ zoe_raw
 #>  8  2005     8  8544        3019            NA      NA         NA
 #>  9  2005     9  8795        2893            NA      NA         NA
 #> 10  2005    10  8884        2642            NA      NA         NA
-#> # ... with 152 more rows, and 7 more variables: diesel_co2 <dbl>,
+#> # ... with 158 more rows, and 7 more variables: diesel_co2 <dbl>,
 #> #   diesel_share <dbl>, total_hybrid <dbl>, total_zoe <dbl>,
 #> #   import_used_zoe <dbl>, href <chr>, comment <chr>
 ```
@@ -108,4 +108,4 @@ zoe_raw %>% filter(year>=2010) %>%
        y="Vehicle registrations", x=NULL, color="Fuel type")
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="60%" />
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="90%" />
