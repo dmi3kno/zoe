@@ -1,5 +1,5 @@
 Package: zoe
-Version: 0.0.0.9000
+Version: 0.0.0.9100
 Title: New vehicle registrations in Norway (1999-2018)
 Description: Dataset and analysis tools for car registrations dataset from www.ofvas.no.
 Authors@R: person("Dmytro", "Perepolkin", , "dperepolkin@gmail.com", c("aut", "cre"))

@@ -6,7 +6,10 @@ library(readxl)
 # for signing file names
 todays_date <- today() %>% as.character() %>% str_replace_all("-", "")
 
+# this data is from previous periods no longer available at OFV website
 ofv_hist_data <- read_csv("data-raw/input/ofv_data.csv", col_types = "cccccccccccccc")
+
+# this data comes from ofv_scrape.R
 ofv_curr_data <- list.files("data-raw/ofvdata/", full.names = TRUE) %>%
   map_dfr(read_csv, col_types = "cccccccccccccc")
 
@@ -14,11 +17,12 @@ ofv_curr_data <- list.files("data-raw/ofvdata/", full.names = TRUE) %>%
 ofv_data <- bind_rows(ofv_curr_data, ofv_hist_data)
 rm(ofv_hist_data, ofv_curr_data)
 
-
-img_model <- read_csv("data-raw/input/co2_image_model_20180722.csv")
-img_make <- read_csv("data-raw/input/co2_image_make_20180722.csv")
-
+# this data comes from img_resize_ocr.R and requires images downloaded to co2 and co2-merke
+img_model <- read_csv("data-raw/input/co2_image_model_20190209.csv")
+img_make <- read_csv("data-raw/input/co2_image_make_20190209.csv")
+# manually updated
 zoe_data <- read_excel("data-raw/input/Book2.xlsx", sheet = "summary")
+# this comes from get_comments.R
 comment_data <- read_csv("data-raw/input/ofvas_comments.csv")
 
 nor_months <- c("januar", "februar", "mars", "april", "mai", "juni", "juli", "august",
